@@ -1,29 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class MenuTraverse : MonoBehaviour
+ 
+public class MainTraverse : MonoBehaviour
 {
-    // Load the game scene when Play is pressed
-    public void PlayGame()
+    public void Play()
     {
-        SceneManager.LoadScene("GameScene"); 
+        SceneManager.LoadScene("Game");
     }
-
-    public void OpenSettings()
+ 
+    public void Quit()
     {
-        SceneManager.LoadScene("SettingsScene"); 
-    }
-
-   
-    public void QuitGame()
-    {
-        Debug.Log("Quitting game...");
         Application.Quit();
     }
-
-    public void BackToMenu()
-    {
-        SceneManager.LoadScene("Main Menu"); 
-    }
 }
-

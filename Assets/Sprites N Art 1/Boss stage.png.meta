@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Boss stage_0: -2934888454477255345
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

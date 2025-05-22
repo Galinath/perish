@@ -1,29 +1,44 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI; // For legacy Text component
 
-public class MenuTraverse : MonoBehaviour
+public class MainTraverse : MonoBehaviour
 {
-    // Load the game scene when Play is pressed
-    public void PlayGame()
+    
+    [SerializeField] private Text titleText;
+    
+    [SerializeField] private AudioSource audioSource;
+
+    public void Play()
     {
-        SceneManager.LoadScene("GameScene"); 
+      
+        StartCoroutine(PlayWithTitleChangeAndAudio());
     }
 
-    public void OpenSettings()
+    private IEnumerator PlayWithTitleChangeAndAudio()
     {
-        SceneManager.LoadScene("SettingsScene"); 
+        
+        if (titleText != null)
+        {
+            titleText.text = "<color=red>Perish</color> of Man";
+        }
+        
+
+        if (audioSource != null && audioSource.clip != null)
+        {
+            audioSource.Play();
+        }
+       
+       
+        yield return new WaitForSeconds(6.5f);
+
+        
+        SceneManager.LoadScene("Level 1");
     }
 
-   
-    public void QuitGame()
+    public void Quit()
     {
-        Debug.Log("Quitting game...");
         Application.Quit();
     }
-
-    public void BackToMenu()
-    {
-        SceneManager.LoadScene("Main Menu"); 
-    }
 }
-

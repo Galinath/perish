@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Poison Spider_0: 75051448639933326
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

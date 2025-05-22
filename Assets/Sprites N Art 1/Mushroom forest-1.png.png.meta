@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Mushroom forest-1.png_0: -2547055657952082149
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

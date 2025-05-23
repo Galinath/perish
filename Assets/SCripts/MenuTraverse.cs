@@ -12,8 +12,9 @@ public class MainTraverse : MonoBehaviour
 
     public void Play()
     {
-      
+
         StartCoroutine(PlayWithTitleChangeAndAudio());
+        
     }
 
     private IEnumerator PlayWithTitleChangeAndAudio()
@@ -31,7 +32,7 @@ public class MainTraverse : MonoBehaviour
         }
        
        
-        yield return new WaitForSeconds(6.5f);
+        yield return new WaitForSeconds(5.7f);
 
         
         SceneManager.LoadScene("Level 1");

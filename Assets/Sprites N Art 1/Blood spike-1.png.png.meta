@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Blood spike-1.png_0: 1930871926061410708
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

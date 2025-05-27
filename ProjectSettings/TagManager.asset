@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - Effect
-  - 
+  - BackGround
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Effects
     uniqueID: 3684567831
+    locked: 0
+  - name: Back
+    uniqueID: 4010780519
     locked: 0
   m_RenderingLayers:
   - Default

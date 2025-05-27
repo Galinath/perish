@@ -14,6 +14,7 @@ public class MainTraverse : MonoBehaviour
     {
 
         StartCoroutine(PlayWithTitleChangeAndAudio());
+        LevelManager.Instance.LoadScene("Game", "CrossFade");
         
     }
 
@@ -35,7 +36,7 @@ public class MainTraverse : MonoBehaviour
         yield return new WaitForSeconds(5.7f);
 
         
-        SceneManager.LoadScene("Level 1");
+       
     }
 
     public void Quit()

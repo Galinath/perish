@@ -351,9 +351,8 @@ GameObject:
   - component: {fileID: 781022460}
   - component: {fileID: 781022459}
   - component: {fileID: 781022462}
-  - component: {fileID: 781022463}
   m_Layer: 0
-  m_Name: Apartment-1.png (1)_0
+  m_Name: Apartment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -475,18 +474,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 20.050468, y: 4.876168}
   m_EdgeRadius: 0
---- !u!114 &781022463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781022458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10fd46fa2508e8e49afa862d9923e00e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &843825682
 GameObject:
   m_ObjectHideFlags: 0

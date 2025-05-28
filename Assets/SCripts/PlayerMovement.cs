@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundCheckRadius = 0.2f;
+    [SerializeField] private DialogueBox dialogueBox; // Reference to DialogueBox
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -31,6 +32,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // Only process input if dialogue is not active
+        if (dialogueBox != null && dialogueBox.IsDialogueActive)
+        {
+            movementX = 0f; // Prevent horizontal movement
+            animator.SetFloat(isWalkingHash, 0f); // Stop walking animation
+            animator.SetFloat(moveXHash, 0f);
+            return; // Skip the rest of Update
+        }
+
         movementX = Input.GetAxisRaw("Horizontal");
         bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
@@ -57,6 +67,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(movementX * moveSpeed, rb.linearVelocity.y);
+        // Only apply movement if dialogue is not active
+        if (dialogueBox == null || !dialogueBox.IsDialogueActive)
+        {
+            rb.linearVelocity = new Vector2(movementX * moveSpeed, rb.linearVelocity.y);
+        }
     }
 }

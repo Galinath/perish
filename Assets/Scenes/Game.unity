@@ -540,8 +540,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1406192465}
   lines:
-  - 'After a late shift I need some sleep '
-  - 'Push T near the bed to hit the hay for the night '
+  - 'After a late shift, I need some sleep! '
+  - Push T near the bed to hit the hay for the night.
   textSpeed: 0.1
 --- !u!114 &843825685
 MonoBehaviour:

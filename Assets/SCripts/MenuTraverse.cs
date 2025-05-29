@@ -1,50 +1,66 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainTraverse : MonoBehaviour
 {
-   
     [SerializeField] private Text titleText;
-    
     [SerializeField] private AudioSource audioSource;
-  
-    [SerializeField] private GameObject backgroundObject;
+    [SerializeField] private GameObject background1;
+    [SerializeField] private GameObject background2;
 
     public void Play()
     {
-      
-        StartCoroutine(PlayWithTitleChangeAndAudioAndSprite());
+        StartCoroutine(PlayWithEffects());
     }
 
-    private IEnumerator PlayWithTitleChangeAndAudioAndSprite()
+    private IEnumerator PlayWithEffects()
     {
-        // Update the title text
         if (titleText != null)
         {
             titleText.text = "<color=red>Perish</color> of Man";
         }
-      
+        else
+        {
+            Debug.LogWarning("Title Text not assigned.");
+        }
 
         if (audioSource != null && audioSource.clip != null)
         {
             audioSource.Play();
         }
-        
-
-        // Activate the Background GameObject
-        if (backgroundObject != null)
+        else
         {
-            backgroundObject.SetActive(true);
+            Debug.LogWarning("AudioSource or clip not assigned.");
         }
-       
 
-        
-        yield return new WaitForSeconds(5.7f);
+        if (background1 != null)
+        {
+            background1.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("Background1 not assigned.");
+        }
 
-       
-        SceneManager.LoadScene("Game");
+        yield return new WaitForSeconds(1f);
+
+        if (background1 != null)
+        {
+            background1.SetActive(false);
+        }
+        if (background2 != null)
+        {
+            background2.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("Background2 not assigned.");
+        }
+
+        yield return new WaitForSeconds(2.8f);
+
+        LevelManager.Instance.LoadScene("Game", "CrossFade");
     }
 
     public void Quit()

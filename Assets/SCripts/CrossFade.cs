@@ -16,7 +16,7 @@ public class CrossFade : SceneTransition
  
     public override IEnumerator AnimateTransitionOut()
     {
-        yield return new WaitForSeconds(4.3f); // Add 2-second delay before fading out
+        yield return new WaitForSeconds(3.6f); // Add 2-second delay before fading out
         var tweener = crossFade.DOFade(0f, 1f);
         yield return tweener.WaitForCompletion();
     }

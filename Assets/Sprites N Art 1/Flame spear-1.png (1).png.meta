@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Flame spear-1.png (1)_0: 8912281680212199430
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

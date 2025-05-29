@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5316f768c7885e84b97ddc8eeed1870c
+guid: 4211aef569b66db4089b61bc948e8559
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3279964876593565628
-    second: SpoopPoopyBottomPants from the sleepover V3_0
+      213: 415078796305988002
+    second: SpoopPoopyBottomPants from the sleepover V3 (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpoopPoopyBottomPants from the sleepover V3_0
+      name: SpoopPoopyBottomPants from the sleepover V3 (1)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 440f1ee92593b72d0800000000000000
-      internalID: -3279964876593565628
+      spriteID: 2a97d9f47f7a2c500800000000000000
+      internalID: 415078796305988002
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      SpoopPoopyBottomPants from the sleepover V3_0: -3279964876593565628
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -145,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 189688762}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 5.280702, y: -1.3508773, z: 3.1187181}
+  m_LocalPosition: {x: 5.24, y: -1.27, z: 3.1187181}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -194,7 +194,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1870464689360212246, guid: 24556aa2df985474d87a17ddb47303d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -581,6 +581,7 @@ GameObject:
   - component: {fileID: 781022460}
   - component: {fileID: 781022459}
   - component: {fileID: 781022462}
+  - component: {fileID: 781022463}
   m_Layer: 0
   m_Name: Apartment
   m_TagString: Untagged
@@ -704,6 +705,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 20.050468, y: 4.876168}
   m_EdgeRadius: 0
+--- !u!114 &781022463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781022458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d249ff8bb80624957b5e5d7142b1da05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1335986822}
+  sleepingPlayer: {fileID: 1149041424}
 --- !u!1 &843825682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,25 +1187,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1038062367 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8010983559272460838, guid: 277bed10493cf4fcb9b0cc8134f95216, type: 3}
-  m_PrefabInstance: {fileID: 1609217330}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1038062368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1038062367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d249ff8bb80624957b5e5d7142b1da05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1335986822}
-  sleepingPlayer: {fileID: 1149041424}
 --- !u!1 &1149041424
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,10 +2421,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8010983559272460838, guid: 277bed10493cf4fcb9b0cc8134f95216, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1038062368}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 277bed10493cf4fcb9b0cc8134f95216, type: 3}
 --- !u!1 &1690494230
 GameObject:

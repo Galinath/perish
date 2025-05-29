@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 5316f768c7885e84b97ddc8eeed1870c
+guid: 802d48b864858b744be3ebbdaae58d80
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3279964876593565628
-    second: SpoopPoopyBottomPants from the sleepover V3_0
+      213: 431572057110803242
+    second: Untitled367_20250527104816_0
+  - first:
+      213: -4621223777203187861
+    second: Untitled367_20250527104816_1
+  - first:
+      213: 88727545552465643
+    second: Untitled367_20250527104816_2
+  - first:
+      213: 8057047511347056893
+    second: Untitled367_20250527104816_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpoopPoopyBottomPants from the sleepover V3_0
+      name: Untitled367_20250527104816_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 7680
-        height: 4320
+        x: 751
+        y: 2336
+        width: 606
+        height: 615
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 440f1ee92593b72d0800000000000000
-      internalID: -3279964876593565628
+      spriteID: a23f217df704df500800000000000000
+      internalID: 431572057110803242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled367_20250527104816_1
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 1161
+        width: 389
+        height: 764
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6f073c757d1edfb0800000000000000
+      internalID: -4621223777203187861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled367_20250527104816_2
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 239
+        width: 771
+        height: 1821
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee627a8b393b3100800000000000000
+      internalID: 88727545552465643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Untitled367_20250527104816_3
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 1161
+        width: 389
+        height: 764
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df05944060260df60800000000000000
+      internalID: 8057047511347056893
       vertices: []
       indices: 
       edges: []
@@ -134,8 +209,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      SpoopPoopyBottomPants from the sleepover V3_0: -3279964876593565628
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

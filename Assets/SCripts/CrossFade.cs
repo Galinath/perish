@@ -9,14 +9,14 @@ public class CrossFade : SceneTransition
     
     public override IEnumerator AnimateTransitionIn()
     {
-        yield return new WaitForSeconds(3f); // Add 2-second delay before fading in
+        yield return new WaitForSeconds(3f);
         var tweener = crossFade.DOFade(1f, 1f);
         yield return tweener.WaitForCompletion();
     }
  
     public override IEnumerator AnimateTransitionOut()
     {
-        yield return new WaitForSeconds(3.6f); // Add 2-second delay before fading out
+        yield return new WaitForSeconds(3.6f); 
         var tweener = crossFade.DOFade(0f, 1f);
         yield return tweener.WaitForCompletion();
     }

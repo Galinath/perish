@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
  
-public class TestMenu: MonoBehaviour
+public class TestFade: MonoBehaviour
 {
     public void Play()
     {

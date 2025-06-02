@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sans Undertale Neutral Special Rip-Off_0: 7961748998286040423
+      Sans Undertale Neutral Special Rip-Off_1: 5329415651430272102
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

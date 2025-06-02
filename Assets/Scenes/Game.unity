@@ -581,6 +581,7 @@ GameObject:
   - component: {fileID: 781022460}
   - component: {fileID: 781022459}
   - component: {fileID: 781022462}
+  - component: {fileID: 781022463}
   m_Layer: 0
   m_Name: Apartment
   m_TagString: Bed
@@ -704,6 +705,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 20.050468, y: 4.876168}
   m_EdgeRadius: 0
+--- !u!114 &781022463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781022458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d249ff8bb80624957b5e5d7142b1da05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1335986822}
+  sleepingPlayer: {fileID: 1149041424}
 --- !u!1 &843825682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,7 +1569,6 @@ GameObject:
   - component: {fileID: 1335986825}
   - component: {fileID: 1335986824}
   - component: {fileID: 1335986823}
-  - component: {fileID: 1335986828}
   m_Layer: 0
   m_Name: PLAYER
   m_TagString: Player
@@ -1696,20 +1710,6 @@ Transform:
   - {fileID: 1755786454}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1335986828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335986822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d249ff8bb80624957b5e5d7142b1da05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1335986822}
-  sleepingPlayer: {fileID: 1149041424}
 --- !u!1 &1406192463
 GameObject:
   m_ObjectHideFlags: 0

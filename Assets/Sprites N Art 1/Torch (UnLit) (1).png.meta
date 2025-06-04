@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 14e82de4391023c40bd2df4378effea5
+guid: 1ea4f7078cc4f10428258b3742f1c31d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1301914601038320235
-    second: New Piskel-1.png (2) (1)_0
+      213: -1270136723730585561
+    second: Torch (UnLit) (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: New Piskel-1.png (2) (1)_0
+      name: Torch (UnLit) (1)_0
       rect:
         serializedVersion: 2
-        x: 58
-        y: 0
-        width: 364
-        height: 270
+        x: 335
+        y: 143
+        width: 354
+        height: 1106
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b6298ca8e64511210800000000000000
-      internalID: 1301914601038320235
+      spriteID: 7282cd511619f5ee0800000000000000
+      internalID: -1270136723730585561
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      New Piskel-1.png (2) (1)_0: 1301914601038320235
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -780,6 +780,7 @@ GameObject:
   - component: {fileID: 158100797}
   - component: {fileID: 158100800}
   - component: {fileID: 158100799}
+  - component: {fileID: 158100801}
   m_Layer: 0
   m_Name: Attack Spider_0 (2)
   m_TagString: Respawn
@@ -833,7 +834,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8615978817628086248, guid: f1f4cd01a314ea141bbc823759a66ec6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 8.34, y: 4.66}
@@ -917,6 +918,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a9bcee275ff714d9dd7428e713f0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &158100801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158100796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ba3ced2e5e03a4994675fb4df40632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  moveDistance: 3
 --- !u!1 &275814674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1800,7 +1815,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8615978817628086248, guid: f1f4cd01a314ea141bbc823759a66ec6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 8.34, y: 4.66}
@@ -2010,6 +2025,7 @@ GameObject:
   - component: {fileID: 536130714}
   - component: {fileID: 536130713}
   - component: {fileID: 536130712}
+  - component: {fileID: 536130715}
   m_Layer: 0
   m_Name: Attack Spider_0 (3)
   m_TagString: Respawn
@@ -2026,7 +2042,7 @@ Transform:
   m_GameObject: {fileID: 536130710}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.88, y: 1.59, z: -0.46640724}
+  m_LocalPosition: {x: 11.22, y: 1.59, z: -0.46640724}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2138,7 +2154,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8615978817628086248, guid: f1f4cd01a314ea141bbc823759a66ec6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 8.34, y: 4.66}
@@ -2147,6 +2163,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &536130715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536130710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ba3ced2e5e03a4994675fb4df40632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2.5
+  moveDistance: 2
 --- !u!1 &654626304
 GameObject:
   m_ObjectHideFlags: 0
@@ -25515,6 +25545,7 @@ GameObject:
   - component: {fileID: 1655991774}
   - component: {fileID: 1655991773}
   - component: {fileID: 1655991772}
+  - component: {fileID: 1655991775}
   m_Layer: 0
   m_Name: Attack Spider_0 (4)
   m_TagString: Respawn
@@ -25643,7 +25674,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8615978817628086248, guid: f1f4cd01a314ea141bbc823759a66ec6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 8.34, y: 4.66}
@@ -25652,6 +25683,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1655991775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655991770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ba3ced2e5e03a4994675fb4df40632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  moveDistance: 4
 --- !u!1 &1677840775
 GameObject:
   m_ObjectHideFlags: 0
@@ -25959,7 +26004,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8615978817628086248, guid: f1f4cd01a314ea141bbc823759a66ec6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 8.34, y: 4.66}
@@ -26170,7 +26215,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 8615978817628086248, guid: f1f4cd01a314ea141bbc823759a66ec6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 8.34, y: 4.66}

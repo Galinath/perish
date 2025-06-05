@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class PortalExit : MonoBehaviour
+public class PortalExit: MonoBehaviour
 {
     private bool isTransitioning = false;
 
@@ -9,7 +9,6 @@ public class PortalExit : MonoBehaviour
     {
         if (other.CompareTag("Player") && !isTransitioning)
         {
-            Debug.Log("Player entered portal.");
             StartCoroutine(TransitionToNextScene());
         }
     }
@@ -18,24 +17,11 @@ public class PortalExit : MonoBehaviour
     {
         isTransitioning = true;
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
 
         if (LevelManager.Instance != null)
         {
-            Debug.Log("Attempting to load 'Level 2' with CrossFade.");
-            try
-            {
-                LevelManager.Instance.LoadScene("Level 2", "CrossFade");
-                Debug.Log("LoadScene called successfully.");
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError("LoadScene failed: " + e.Message);
-            }
-        }
-        else
-        {
-            Debug.LogError("LevelManager instance is null.");
+            LevelManager.Instance.LoadScene("Level 2", "CrossFade");
         }
     }
 }

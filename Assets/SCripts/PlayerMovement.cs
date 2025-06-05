@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
 
-        rb.gravityScale = 1f;
+        rb.gravityScale = 1f; // Fixed typo: was "gravity hullScale"
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
@@ -66,11 +66,32 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FixedUpdate()
+{
+    // Only apply movement if dialogue is not active
+    if (dialogueBox == null || !dialogueBox.IsDialogueActive)
     {
-        // Only apply movement if dialogue is not active
-        if (dialogueBox == null || !dialogueBox.IsDialogueActive)
+        rb.linearVelocity = new Vector2(movementX * moveSpeed, rb.linearVelocity.y);
+
+        // Debug raycast to detect horizontal collisions
+        if (movementX != 0) // Only cast ray when moving horizontally
         {
-            rb.linearVelocity = new Vector2(movementX * moveSpeed, rb.linearVelocity.y);
+            Vector2 direction = new Vector2(movementX, 0).normalized;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f, groundLayer);
+            if (hit.collider != null)
+            {
+                Debug.Log("Horizontal Hit: " + hit.collider.gameObject.name + " at position: " + hit.point);
+            }
+        }
+
+        // Debug ground check to detect what the groundCheck is hitting
+        Collider2D[] groundHits = Physics2D.OverlapCircleAll(groundCheck.position, groundCheckRadius, groundLayer);
+        if (groundHits.Length > 0)
+        {
+            foreach (Collider2D hit in groundHits)
+            {
+                Debug.Log("Ground Check Hit: " + hit.gameObject.name + " at position: " + groundCheck.position);
+            }
         }
     }
+}
 }

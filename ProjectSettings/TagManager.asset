@@ -14,7 +14,7 @@ TagManager:
   - UI
   - Effect
   - BackGround
-  - 
+  - Checkpoint
   - Player
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Infront
+    uniqueID: 2981958771
     locked: 0
   - name: Effects
     uniqueID: 3684567831

@@ -1191,7 +1191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1723693667}
   lines:
-  - Am - Am I Dreaming? This Feels too real.
+  - Am- Am I Dreaming? This Feels too real.
   - 'It can''t be, there''s no way '
   textSpeed: 0.1
 --- !u!114 &325827915
@@ -1232,54 +1232,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325827912}
   m_CullTransparentMesh: 1
---- !u!1 &326437125
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 326437127}
-  - component: {fileID: 326437126}
-  m_Layer: 0
-  m_Name: CameraController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &326437126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326437125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ad07d4d90555704eac9967fa94e19c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {fileID: 1521841786}
-  moveSpeed: 2
-  positionThreshold: 0.1
-  dialogueBox: {fileID: 325827914}
---- !u!4 &326437127
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 326437125}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.2, y: 9.5, z: 0.64251655}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &358370855
 GameObject:
   m_ObjectHideFlags: 0
@@ -3314,7 +3266,7 @@ GameObject:
   - component: {fileID: 958214925}
   - component: {fileID: 958214928}
   m_Layer: 8
-  m_Name: Checkpoint
+  m_Name: Checkpoint-1.png_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25102,37 +25054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a9bcee275ff714d9dd7428e713f0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1521841785
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1521841786}
-  m_Layer: 0
-  m_Name: Target
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1521841786
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521841785}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 96.47, y: 2.57, z: 0.64251655}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1549234572
 GameObject:
   m_ObjectHideFlags: 0
@@ -26316,6 +26237,7 @@ GameObject:
   - component: {fileID: 1982358047}
   - component: {fileID: 1982358050}
   - component: {fileID: 1982358051}
+  - component: {fileID: 1982358052}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -26456,6 +26378,18 @@ MonoBehaviour:
   player: {fileID: 654626309}
   offset: {x: 0, y: 2, z: -1}
   followSpeed: 5
+--- !u!114 &1982358052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982358046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab2b08f82d41b242b0215e2893770ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2011847295
 GameObject:
   m_ObjectHideFlags: 0
@@ -26867,5 +26801,3 @@ SceneRoots:
   - {fileID: 839809025}
   - {fileID: 2064358027}
   - {fileID: 1178971558}
-  - {fileID: 326437127}
-  - {fileID: 1521841786}

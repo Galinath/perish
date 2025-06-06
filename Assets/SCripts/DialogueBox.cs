@@ -35,7 +35,7 @@ public class DialogueBox : MonoBehaviour
         }
     }
 
-    public void StartDialogue()
+    void StartDialogue()
     {
         index = 0;
         StartCoroutine(TypeLine());

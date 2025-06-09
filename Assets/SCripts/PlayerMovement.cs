@@ -2,17 +2,20 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private PlayerStats stats; // ScriptableObject for stats
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundCheckRadius = 0.2f;
     [SerializeField] private DialogueBox dialogueBox; // Reference to DialogueBox
 
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer[] spriteRenderers;
     private float movementX;
+    private bool isGrounded;
+    private float coyoteTimer;
+    private float jumpBufferTimer;
+    private bool jumpRequested;
+    private float targetVelocityX;
 
     // Animator parameter hashes
     private readonly int isWalkingHash = Animator.StringToHash("IsWalking");
@@ -25,35 +28,65 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
-
-        rb.gravityScale = 1f; // Fixed typo: was "gravity hullScale"
+        rb.gravityScale = stats.gravityScale;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        coyoteTimer = stats.coyoteTime;
     }
 
     void Update()
     {
-        // Only process input if dialogue is not active
+        // Skip input processing if dialogue is active
         if (dialogueBox != null && dialogueBox.IsDialogueActive)
         {
-            movementX = 0f; // Prevent horizontal movement
-            animator.SetFloat(isWalkingHash, 0f); // Stop walking animation
+            movementX = 0f;
+            animator.SetFloat(isWalkingHash, 0f);
             animator.SetFloat(moveXHash, 0f);
-            return; // Skip the rest of Update
+            return;
         }
 
+        // Input handling
         movementX = Input.GetAxisRaw("Horizontal");
-        bool isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, stats.groundCheckRadius, groundLayer);
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        // Coyote time
+        if (isGrounded)
+            coyoteTimer = stats.coyoteTime;
+        else
+            coyoteTimer -= Time.deltaTime;
+
+        // Jump buffer
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            animator.SetTrigger(jumpHash);
+            jumpBufferTimer = stats.jumpBufferTime;
+            jumpRequested = true;
+        }
+        else
+        {
+            jumpBufferTimer -= Time.deltaTime;
         }
 
+        // Jump logic
+        if (jumpRequested && coyoteTimer > 0f)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, stats.jumpForce);
+            animator.SetTrigger(jumpHash);
+            jumpRequested = false;
+            coyoteTimer = 0f;
+            jumpBufferTimer = 0f;
+        }
+
+        // Variable jump height
+        if (Input.GetKeyUp(KeyCode.Space) && rb.linearVelocity.y > 0f)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * stats.jumpCutMultiplier);
+        }
+
+        // Animation updates
         animator.SetFloat(isWalkingHash, Mathf.Abs(movementX) > 0 ? 1f : 0f);
         animator.SetFloat(moveXHash, movementX);
         animator.SetBool(isGroundedHash, isGrounded);
 
+        // Sprite flipping
         if (movementX != 0)
         {
             bool flip = movementX < 0;
@@ -65,33 +98,51 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+  void FixedUpdate()
 {
-    // Only apply movement if dialogue is not active
-    if (dialogueBox == null || !dialogueBox.IsDialogueActive)
+    if (dialogueBox != null && dialogueBox.IsDialogueActive)
     {
-        rb.linearVelocity = new Vector2(movementX * moveSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+        return;
+    }
 
-        // Debug raycast to detect horizontal collisions
-        if (movementX != 0) // Only cast ray when moving horizontally
-        {
-            Vector2 direction = new Vector2(movementX, 0).normalized;
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 1f, groundLayer);
-            if (hit.collider != null)
-            {
-                Debug.Log("Horizontal Hit: " + hit.collider.gameObject.name + " at position: " + hit.point);
-            }
-        }
+    float acceleration = isGrounded ? stats.acceleration : stats.acceleration * stats.airControl;
+    float deceleration = isGrounded ? stats.deceleration : stats.deceleration * stats.airControl;
+    float maxSpeed = stats.moveSpeed;
 
-        // Debug ground check to detect what the groundCheck is hitting
-        Collider2D[] groundHits = Physics2D.OverlapCircleAll(groundCheck.position, groundCheckRadius, groundLayer);
-        if (groundHits.Length > 0)
+    targetVelocityX = movementX * maxSpeed;
+    float currentVelocityX = rb.linearVelocity.x;
+    float newVelocityX;
+
+    // Check for wall collisions
+    Vector2 direction = new Vector2(movementX, 0).normalized;
+    RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 0.5f, groundLayer);
+    if (hit.collider != null && Mathf.Abs(movementX) > 0)
+    {
+        // If hitting a wall, prevent pushing into it
+        newVelocityX = 0f;
+    }
+    else if (Mathf.Abs(movementX) > 0)
+    {
+        newVelocityX = Mathf.MoveTowards(currentVelocityX, targetVelocityX, acceleration * Time.fixedDeltaTime);
+    }
+    else
+    {
+        newVelocityX = Mathf.MoveTowards(currentVelocityX, 0f, deceleration * Time.fixedDeltaTime);
+    }
+
+    rb.linearVelocity = new Vector2(newVelocityX, rb.linearVelocity.y);
+
+   
+}
+
+    // Optional: Visualize ground check in editor
+    void OnDrawGizmos()
+    {
+        if (groundCheck != null)
         {
-            foreach (Collider2D hit in groundHits)
-            {
-                Debug.Log("Ground Check Hit: " + hit.gameObject.name + " at position: " + groundCheck.position);
-            }
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(groundCheck.position, stats.groundCheckRadius);
         }
     }
-}
 }

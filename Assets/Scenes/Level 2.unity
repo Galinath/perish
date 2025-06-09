@@ -28627,6 +28627,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa6f574ac1127f488ba7ebe81e34baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unlitTorchSprite: {fileID: 0}
+  litTorchSprite: {fileID: 0}
+  checkpointSound: {fileID: 0}
 --- !u!212 &776859188
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -81704,13 +81707,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734228f08ef444bf4b9024a88d33fca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
-  jumpForce: 6.7
+  stats: {fileID: 11400000, guid: a31fd1da13e30cf43b9977cb2d388d97, type: 2}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
   groundCheck: {fileID: 1787621021}
-  groundCheckRadius: 0.1
   dialogueBox: {fileID: 0}
 --- !u!61 &1847640164
 BoxCollider2D:

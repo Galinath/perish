@@ -16,7 +16,7 @@ MonoBehaviour:
   acceleration: 50
   deceleration: 50
   airControl: 0.5
-  jumpForce: 6.4
+  jumpForce: 6.7
   jumpCutMultiplier: 0.5
   coyoteTime: 0.1
   jumpBufferTime: 0.1

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9844a914ec162244fba48a92313e0aa6, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7
   acceleration: 50
   deceleration: 50
   airControl: 0.5
